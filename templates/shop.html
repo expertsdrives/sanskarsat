@@ -1,0 +1,46 @@
+{% extends 'master.html' %}
+{% block content %}
+            <section class="inner-banner bg-set" style="background-image: url('static/images/sop_banner.jpg'); background-color: #d9d9d9;">
+                <div class="container">
+                    <div class="banner-content">
+                        <h5>Embrace this experience with</h5>
+                        <h1>Exclusive SanskarSat Memorandums<h1>
+                    </div>
+                </div>
+            </section>
+            <section class="product-list-section">
+                <div class="container">
+                    <div class="product-list-area">
+                        <div class="text-center">
+                            <h2>Explore Memorandums</h2>
+                        </div>
+                        <div class="row">
+                            {% for pro_comb in pro_comb %}
+                                <div class="col-3">
+                                    <div class="product-box">
+                                        <div class="product-img bg-set" style="background-color: #d9d9d9;background-image: url('static/{{ pro_comb.proLogo}}');"></div>
+                                        <div class="product-detail">
+                                            <h5>{{pro_comb.productName}}</h5>
+                                            <div class="product-price">Rs.{{pro_comb.rs}}</div>
+                                            <a href="#" class="buy-btn">
+                                                <span>Buy</span>
+                                                <img src="static/images/buy-btn.svg" alt="buy-btn">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="text-center">
+                            <a href="#" class="view-all-btn">
+                                <span>view all</span>
+                                <img src="static/images/view-all-arrow.svg" alt="view-all-arrow">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+           
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"> </script>
+            <script src="static/js/calender.js"></script>
+ {% endblock %}

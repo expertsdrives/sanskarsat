@@ -1,0 +1,234 @@
+{% extends 'master.html' %}
+
+
+{% block content %}
+<section class="banner-section d-flex flex-wrap">
+    {% for back_img in back_img  %}
+        <div class="banner-left bg-set" style="background-image: url(static/{{ back_img.backgroundImage }});"></div>
+    {% endfor %}
+    <div class="banner-right">
+        <div class="banner-slider">
+            {% for img_right in img_right  %}
+                <div class="slide-box bg-set" style="background-image: url(static/{{ img_right.image }});"></div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="activities-section">
+    <div class="container">
+        <div class="activity-tagline text-center">
+            {% for intro in index %}
+                <p>{{intro.introduction|safe }}</p>
+            {% endfor %}
+        </div>
+        <div class="graphic-logo text-center">
+            {% for Limgae in index1 %}
+                <img src="static/{{Limgae.sanImage}}" alt="graphic">
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section id="act" class="activities-section bg-set" style="background-image: url('static/images/footer-bg.jpg');    background-repeat: no-repeat; background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="text-center sec-heading">
+            <h2>ACTIVITIES</h2>
+        </div>
+        <div class="activity-slider-area">
+            <div class="activity-slider">
+                {% for act_comb in act_comb %}
+                    <div class="slider-box">
+                        <div class="slider-title d-flex align-items-center justify-content-center">
+                            <div class="arrow"><img src="static/images/left-arrow.png" alt="right-arrow"></div>
+                            <h4>{{act_comb.activities}}</h4>
+                            <div class="arrow"><img src="static/images/right-arrow.png" alt="left-arrow"></div>
+                        </div>
+                        <div class="row slider-image-boxes">
+                            <div class="col-4 half-box">
+                                <div class="img-box"><img src="static/{{act_comb.smallImage1}}" alt="box-image"></div>
+                                <div class="img-box"><img src="static/{{act_comb.smallImage2}}" alt="box-image"></div>
+                            </div>
+                            <div class="col-4 no-padding full-box">
+                                <div class="img-box"><img src="static/{{act_comb.largeImage}}" alt="box-image"></div>
+                            </div>
+                            <div class="col-4 half-box">
+                                <div class="img-box"><img src="static/{{act_comb.smallImage3}}" alt="box-image"></div>
+                                <div class="img-box"><img src="static/{{act_comb.smallImage4}}" alt="box-image"></div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section id="wrk" class="workshop-section bg-gray">
+    <div class="container">
+        <div class="workshop-inner">
+            <div class="text-center sec-heading">
+                <h2>WORKSHOPS</h2>
+            </div>
+            <div class="workshop-slider">
+                {% for work_combined in work_combined %}
+                <div class="col-6">
+                    <div class="work-box">
+                        <div class="work-img"><img src="static/{{work_combined.workImage}}" alt="work-img"></div>
+                        <h6>{{work_combined.workTitle}}</h6>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<section id="otm" class="team-section">
+    <div class="container">
+        <h2 class="team-title" style="text-decoration: underline;">
+            OUR TEAM
+        </h2>
+        <div class="team-detail-area">
+            <div id="wrapper">
+                <div class="teambox mentor-box label">
+                    <h5>MENTOR</h5>
+                    {% for team in team_data %}
+                        {% if team.jobname == "MENTOR" %}
+                            {% for job in team.jobs %}
+                                <div class="imgbox bg-set" style="background-image: url(static/{{job.timage}});"></div>
+                                <span class="name">{{job.name}}</span>
+                                <span class="designation">{{job.designation}}</span>
+                                <div class="span detail">{{job.remark}}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div> 
+                {% for team in team_data %}
+                    <div class="branch lv1">
+                        {% if team.jobname == "DESIGN TEAM" %}
+                            <div class="entry"><span class="label">DESIGN TEAM</span>
+                                <div class="branch students-list-box lv2">
+                                    {% for job in team.jobs %}
+                                        <div class="entry">
+                                            <div class="teambox label">
+                                                <div class="imgbox bg-set" style="background-image: url(static/{{job.timage}});"></div>
+                                                <span class="name">{{ job.name }}</span>
+                                                <span class="designation">{{ job.designation }}</span>
+                                                <div class="span detail">{{ job.remark }}</div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if team.jobname == "FABRICATION TEAM" %}
+                            <div class="entry">                                            
+                                <span class="label">FABRICATION TEAM</span>
+                                <div class="branch students-list-box lv2">
+                                    {% for job in team.jobs %}
+                                        <div class="entry">
+                                            <div class="teambox label">
+                                                <div class="imgbox bg-set" style="background-image: url(static/{{job.timage}});"></div>
+                                                <span class="name">{{ job.name }}</span>
+                                                <span class="designation">{{ job.designation }}</span>
+                                                <div class="span detail">{{ job.remark }}</div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if team.jobname == "MISSION TEAM" %}
+                            <div class="entry"><span class="label">MISSION TEAM</span>
+                                <div class="branch students-list-box lv2">
+                                    {% for job in team.jobs %}
+                                        <div class="entry">
+                                            <div class="teambox label">
+                                                <div class="imgbox bg-set" style="background-image: url(static/{{job.timage}});"></div>
+                                                <span class="name">{{ job.name }}</span>
+                                                <span class="designation">{{ job.designation }}</span>
+                                                <div class="span detail">{{ job.remark }}</div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if team.jobname == "AIT TEAM" %}
+                            <div class="entry">
+                                <span class="label">AIT TEAM</span>
+                                <div class="branch students-list-box lv2">
+                                    {% for job in team.jobs %}
+                                        <div class="entry">
+                                            <div class="teambox label">
+                                                <div class="imgbox bg-set" style="background-image: url(static/{{job.timage}});"></div>
+                                                <span class="name">{{ job.name }}</span>
+                                                <span class="designation">{{ job.designation }}</span>
+                                                <div class="span detail">{{ job.remark }}</div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% if team.jobname == "QA & DOCUMENTATION" %}
+                            <div class="entry">
+                                <span class="label">QA & DOCUMENTATION</span>
+                                <div class="branch students-list-box lv2">
+                                    {% for job in team.jobs %}
+                                        <div class="entry">
+                                            <div class="teambox label">
+                                                <div class="imgbox bg-set" style="background-image: url(static/{{job.timage}});"></div>
+                                                <span class="name">{{ job.name }}</span>
+                                                <span class="designation">{{ job.designation }}</span>
+                                                <div class="span detail">{{ job.remark }}</div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>   
+                {% endfor %}
+            </div> 
+        </div>
+    </div>
+</section>                
+
+<section id="faqs" class="faq-section">
+    <div class="container">
+        <div class="faq-title">
+            <div class="h1">Questions? Look Here.</div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="faq-title">
+                    <div class="text-left">
+                        {% for faqLogo in faqLogo %}
+                        <div class="boy-img">
+                            <img src="static/{{faqLogo.fLogo}}" alt="faq-boy">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="faq-box-area">
+                    <div class="acc-container">
+                        {% for faq_combined in faq_combined %}
+                        <div class="acc">
+                            <div class="acc-head">
+                                <h5>{{faq_combined.question}}</h5>
+                            </div>
+                            <div class="acc-content">
+                                <p>{{faq_combined.answer}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="text-center">
+                        <a href="#" class="btn">more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+        <meta http-equiv="x-ua-compatible" content="IE=Edge">
+        <meta name="description" content="Page Description" /> 
+        <!-- Chrome, Firefox OS, Opera and Vivaldi -->
+        <meta name="theme-color" content="#000">
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#000">
+        <!-- iOS Safari -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+        <title>SANSKARSAT</title>
+        <link rel="mask-icon" href="static/images/favicon.ico" color="white"> 
+        <link rel="shortcut icon" href="static/images/favicon.ico" type="static/image/x-icon">
+        <link rel="stylesheet" href="static/css/slick.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap-grid.css"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link href="static/css/calender.css" rel="stylesheet" />
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="static/css/screen.css">
+        <link rel="stylesheet" href="static/css/responsive.css">
+    </head>
+    <body>
+         <!-- HEADER -->
+         <header>
+            <div class="header-top">
+                <div class="container">
+                    <div class="row align-items-center m-none">
+                        {% for set_logo in set_logo %}
+                            <div class="col-2">
+                                <a href="index" class="logo-box text-left"><img src="static/{{set_logo.setLogo}}" alt="sankar_text_logo"></a>
+                            </div>
+                        {% endfor %}
+                        <div class="col-8">
+                            {% for head_comb in head_comb %}
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <h5>{{head_comb.title}}</h5>
+                                    <div class="img"><img src="static/{{head_comb.tlLogo}}" alt="Satellite"></div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="col-2">
+                            {% for dha_logo in dha_logo %}
+                                    <div class="text-right">
+                                        <a href="index" class="mobile-logo"><img src="static/{{dha_logo.dhaLogo}}" alt="sanskardham_logo"></a>
+                                    </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="d-none mobile-header-top">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="index" class="mobile-logo"><img src="static/images/sanskardham_logo.png" alt="sanskardham_logo"></a>
+                            <a href="#" class="menu-icon"><img src="static/images/menu-icon.svg" alt="menu-icon"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile_menu" class="header-bottom">
+                <div class="container">
+                    <div class="header-bottom-area">
+                        <a href="#" class="search-icon m-none"><img src="static/images/search.svg" alt="search"></a>
+                        <a href="#" class="close-icon d-none"><img src="static/images/menu-close-icon.svg" alt="close"></a>
+                        <div class="search-box">
+                            <div class="form">
+                                <input type="search" name="" id="" placeholder="search here ...">
+                                <input type="submit" value="" class="search-btn">
+                            </div>
+                        </div>
+                        <div class="menu-area">
+                            <ul class="menu d-flex align-items-center justify-content-center">
+                                {% for menu_item in menu_data  %}
+                                <li class="children">
+                                    <a href="{{ menu_item.url }}">{{ menu_item.menu }}</a>
+                                    {% comment %} <ul class="sub-menu">
+                                        {% for submenu in menu_item.submenus %}
+                                        <li><a href="#">{{submenu }}</a></li>
+                                        {% endfor %}
+                                    </ul> {% endcomment %}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="headline">
+                <marquee scrollamount = "10"><b>Welcome to SanskarSat!</b></marquee>
+            </div>
+        </header>
+        <!-- HEADER END-->
+        <div class="content">
+          <div class="calendar-container">
+            <div class="calendar"> 
+              <div class="year-header"> 
+                <span class="left-button" id="prev"> &lang; </span> 
+                <span class="year" id="label"></span> 
+                <span class="right-button" id="next"> &rang; </span>
+              </div> 
+              <table class="months-table"> 
+                <tbody>
+                  <tr class="months-row">
+                    <td class="month">Jan</td> 
+                    <td class="month">Feb</td> 
+                    <td class="month">Mar</td> 
+                    <td class="month">Apr</td> 
+                    <td class="month">May</td> 
+                    <td class="month">Jun</td> 
+                    <td class="month">Jul</td>
+                    <td class="month">Aug</td> 
+                    <td class="month">Sep</td> 
+                    <td class="month">Oct</td>          
+                    <td class="month">Nov</td>
+                    <td class="month">Dec</td>
+                  </tr>
+                </tbody>
+              </table> 
+              
+              <table class="days-table"> 
+                <td class="day">Sun</td> 
+                <td class="day">Mon</td> 
+                <td class="day">Tue</td> 
+                <td class="day">Wed</td> 
+                <td class="day">Thu</td> 
+                <td class="day">Fri</td> 
+                <td class="day">Sat</td>
+              </table> 
+              <div class="frame"> 
+                <table class="dates-table"> 
+                    <tbody class="tbody">             
+                    </tbody> 
+                </table>
+              </div> 
+              <button class="button" id="add-button">Add Event</button>
+            </div>
+          </div>
+          <div class="events-container">
+          </div>
+          <div class="dialog" id="dialog">
+              <h2 class="dialog-header"> Add New Event </h2>
+              <form class="form" id="form">
+                <div class="form-container" align="center">
+                  <label class="form-label" id="valueFromMyButton" for="name">Event name</label>
+                  <input class="input" type="text" id="name" maxlength="36">
+                  <label class="form-label" id="valueFromMyButton" for="count"></label>
+                  {% comment %} <input class="input" type="number" id="count" min="0" max="1000000" maxlength="7"> {% endcomment %}
+                  <input type="button" value="Cancel" class="button" id="cancel-button">
+                  <input type="button" value="OK" class="button" id="ok-button">
+                </div>
+              </form>
+            </div>
+        </div>
+        <!-- Dialog Box-->
+        <!-- FOOTER -->
+        <footer class="footer bg-set" style="background-image: url('static/images/footer-bg.jpg');">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-inner-area">
+                        <div class="row">
+                            <div class="col-6 address-box">
+                                <h3>Let’s Get Connected!</h3>
+                                <ul class="unlisted">
+                                    <li>
+                                        <p><b>Telephone</b></p>
+                                        <a href="tel:07575044431">075750 44431</a>
+                                    </li>
+                                    <li>
+                                        <p><b>Email</b></p>
+                                        <a href="mailto:info@sansakarsat.space">info@sansakarsat.space</a>
+                                    </li>
+                                    <li>
+                                        <p><b>Address</b></p>
+                                        <p>Sanskardham campus Bopal-Ghuma-Sanand, Road, opp. <br> Manipur village, Ahmedabad, Gujarat 382115</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-6 contact-box">
+                                <h3>Write to Us!</h3>
+                                <div class="contact-tagline"><p>Your email address will not be published. Required fields are marked *</p></div>
+                                <div class="contact-form">
+                                    <form action="">
+                                        <div class="form-group">
+                                            <input type="text" name="" id="" class="in" placeholder="Your Name*">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="" id="" class="in" placeholder="Email Address*">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea name="" id="" placeholder="Message*" class="in"></textarea>
+                                        </div>
+                                        <div class="text-center"><input type="submit" value="POST COMMENT" class="submit-btn btn"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex align-items-center justify-content-between">
+                <div class="footer-tagline"><p><b>Copyrights ©2023 All Rights Reserved by SANSKARSAT</b> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i> Powered by Cubesat Aerospace LLP</i></p></div>
+                <ul class="d-flex align-items-center unlisted">
+                    <li><a href="#"><img src="static/images/facebook.svg" alt="facebook"></a></li>
+                    <li><a href="#"><img src="static/images/youtube.svg" alt="youtube"></a></li>
+                </ul>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"> </script>
+        <script src="static/js/calender.js"></script>
+        <script src="static/js/script.js"></script>
+      </body>
+</html>
+

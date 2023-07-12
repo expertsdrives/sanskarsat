@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset-'UTF-8'" />
+        <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+        <meta http-equiv="x-ua-compatible" content="IE=Edge">
+        <meta name="description" content="Page Description" /> 
+        <!-- Chrome, Firefox OS, Opera and Vivaldi -->
+        <meta name="theme-color" content="#000">
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#000">
+        <!-- iOS Safari -->
+        <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+        <title>SANSKARSAT</title>
+        <link rel="mask-icon" href="static/images/favicon.ico" color="white"> 
+        <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="static/css/slick.css">
+        <link href="static/css/screen.css" rel="stylesheet" />
+        <link href="static/css/responsive.css" rel="stylesheet" />
+        <script src="static/js/jquery-cdn.js"></script>
+
+    </head>
+    <body class="">
+        <!-- FULL WRAPPER-->
+        <div id="full_wrapper">
+            <!-- HEADER -->
+            <header>
+                <div class="header-top">
+                    <div class="container">
+                        <div class="row align-items-center m-none">
+                            {% for set_logo in set_logo %}
+                            <div class="col-2">
+                                <a href="index.html" class="logo-box text-left"><img src="static/{{set_logo.setLogo}}" alt="sankar_text_logo"></a>
+                            </div>
+                            {% endfor %}
+                            <div class="col-8">
+                                {% for head_comb in head_comb %}
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <h5>{{head_comb.title}}</h5>
+                                        <div class="img"><img src="static/{{head_comb.tlLogo}}" alt="Satellite"></div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="col-2">
+                                {% for dha_logo in dha_logo %}
+                                <div class="text-right">
+                                    <a href="index.html" class="logo-box"><img src="static/{{dha_logo.dhaLogo}}" class="sanskardham_logo" alt="sanskardham_logo"></a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="d-none mobile-header-top">
+                            {% for dha_logo in dha_logo %}
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <a href="index.html" class="mobile-logo"><img src="static/{{dha_logo.dhaLogo}}" alt="sanskardham_logo"></a>
+                                    <a href="#" class="menu-icon"><img src="static/images/menu-icon.svg" alt="menu-icon"></a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div id="mobile_menu" class="header-bottom">
+                    <div class="container">
+                        <div class="header-bottom-area">
+                            <a href="#" class="search-icon m-none"><img src="static/images/search.svg" alt="search"></a>
+                            <a href="#" class="close-icon d-none"><img src="static/images/menu-close-icon.svg" alt="close"></a>
+                            <div class="search-box">
+                                <div class="form">
+                                    <input type="search" name="" id="" placeholder="search here ...">
+                                    <input type="submit" value="" class="search-btn">
+                                </div>
+                            </div>
+                            <div class="menu-area">
+                               
+                                <ul class="menu d-flex align-items-center justify-content-center">
+                                    {% for menu_item in menu_data  %}
+                                    <li class="children">
+                                        <a href="{{ menu_item.url }}">{{ menu_item.menu }}</a>
+                                        <ul class="sub-menu">
+                                            {% for submenu in menu_item.submenus %}
+                                            <li><a href="#">{{submenu }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    {% endfor %}
+                                    <li>
+                                        <a href="{% url 'login' %}">Login</a>
+                                    </li>
+                                    <li>
+                                        <a href="signup">Signup</a>
+                                    </li>
+                                </ul>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% for head_line in head_line  %}
+                    <div class="headline">
+                    <marquee scrollamount = "10"><b>{{head_line.headLine}}</b></marquee>
+                    </div>
+                {% endfor %}
+            </header>
+            <!-- HEADER END-->
+            <!---->
+            <div class="main">
+                <section class="banner-section d-flex flex-wrap">
+                    {% for textImg_combined in textImg_combined  %}
+                    <div class="banner-left bg-set" style="background-image: url(static/{{ textImg_combined.backgroundImage }});">
+                        <div class="banner-title text-center">
+                            {{textImg_combined.textLine|safe}}
+                        </div>
+                    </div>
+                    {% endfor %}      
+                    <div class="banner-right">
+                        <div class="banner-slider">
+                            {% for img_right in img_right  %}
+                                <div class="slide-box bg-set" style="background-image: url(static/{{ img_right.image }});"></div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+                <section class="activities-section">
+                    <div class="container">
+                        <div class="activity-tagline text-center">
+                            {% for intro in index %}
+                            {% comment %} <p>We are celebrating <b>75th independence day - Amrit Mahotsav</b>  by <br> building Satellite <br> at <i>Atal Tinkering Lab</i>.</p> {% endcomment %}
+                                <p>{{intro.introduction|safe }}</p>                            
+                            {% endfor %}
+                        </div>
+                        <div class="graphic-logo text-center">
+                            {% for Limgae in index1 %}
+                            <img src="static/{{Limgae.sanImage}}"  alt="graphic">
+                            {% endfor %}
+                        </div>
+                        <div class="text-center sec-heading">
+                            <h2>ACTIVITIES</h2>
+                        </div>
+                        <div class="row activity-list">
+                            {% for act_combined in act_combined %}
+                            <div class="col-4">
+                                <div class="activity-box">
+                                    <div class="activity-img"><img src="static/{{act_combined.actImage}}" alt="activities-1"></div>
+                                    <h6>{{act_combined.activities}}</h6>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+                <section class="workshop-section bg-gray">
+                    <div class="container">
+                        <div class="workshop-inner">
+                            <div class="text-center sec-heading">
+                                <h2>WORKSHOPS</h2>
+                            </div>
+                            <div class="workshop-slider">
+                                {% for work_combined in work_combined %}
+                                    <div class="col-6">
+                                        <div class="work-box">                                        
+                                            <div class="work-img"><img src="static/{{work_combined.workImage}}" alt="work-img"></div>
+                                            <h6>{{work_combined.workTitle}}</h6>                                        
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="faq-section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="faq-title">
+                                    <div class="text-left">
+                                        <div class="h1">FAQ</div>
+                                        {% for faqLogo in faqLogo %}
+                                            <div class="boy-img">
+                                                <img src="static/{{faqLogo.fLogo}}" alt="faq-boy">
+                                            </div>
+                                        {% endfor %}     
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="faq-box-area">
+                                    <div class="acc-container">        
+                                        {% for faq_combined in faq_combined %}
+                                            <div class="acc">
+                                                <div class="acc-head">
+                                                    <h5>{{faq_combined.question}}</h5>
+                                                </div>
+                                                <div class="acc-content">
+                                                    <p>{{faq_combined.answer}}</p>
+                                                </div>                                                                                       
+                                            </div>
+                                        {% endfor %}    
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#" class="btn">more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <footer class="footer bg-set" style="background-image: url('static/images/footer-bg.jpg');">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-inner-area">
+                        <div class="row">
+                            <div class="col-6 address-box">
+                                <h3>Let’s Get Connected!</h3>
+                                {% for con_combined in con_combined %}
+                                    <ul class="unlisted">                                    
+                                        <li>
+                                            <p><b>Telephone</b></p>
+                                            <a href="tel:{{con_combined.telephone}}">{{con_combined.telephone}}</a>
+                                        </li>
+                                        <li>
+                                            <p><b>Email</b></p>
+                                            <a href="mailto:{{con_combined.email}}">{{con_combined.email}}</a>
+                                        </li>
+                                        <li>
+                                            <p><b>Address</b></p>
+                                            <p>{{con_combined.address}}</p>
+                                        </li>
+                                    </ul>
+                                {% endfor %}    
+                            </div>
+                            <div class="col-6 contact-box">
+                                <h3>Write to Us!</h3>
+                                <div class="contact-tagline"><p>Your email address will not be published. Required fields are marked *</p></div>
+                                <div class="contact-form">
+                                    <form method="post" action="{% url 'index' %}">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <input type="text" id="name" name="name" required placeholder="Your Name*">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" id="email" name="email" placeholder="Email Address*">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea id="comment" name="comment" placeholder="Message*" class="in"></textarea>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" value="POST COMMENT" class="submit-btn btn">POST COMMENT</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex align-items-center justify-content-between">
+                <div class="footer-tagline"><p><b>Copyrights ©2023 All Rights Reserved by SANSKARSAT</b> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i> Powered by Cubesat Aerospace LLP</i></p></div>
+                <ul class="d-flex align-items-center unlisted">
+                    <li><a href="#"><img src="static/images/facebook.svg" alt="facebook"></a></li>
+                    <li><a href="#"><img src="static/images/youtube.svg" alt="youtube"></a></li>
+                </ul>
+            </div>
+        </footer>
+        <script src="static/js/slick.js"></script>
+        <script src="static/js/script.js"></script>
+    </body>
+</html>
+

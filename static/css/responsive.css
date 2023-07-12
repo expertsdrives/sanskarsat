@@ -1,0 +1,186 @@
+
+@media (min-width:1024px){
+    #wrapper { position: relative; }
+.branch { position: relative; margin-left: 250px; }
+.branch:before { content: ""; width: 50px; border-top: 2px solid #eee9dc; position: absolute; left: -100px; top: 50%; margin-top: 1px; }
+.entry { position: relative; min-height: 60px; }
+.entry:before { content: ""; height: 100%; border-left: 2px solid #eee9dc; position: absolute; left: -50px; }
+.entry:after { content: ""; width: 50px; border-top: 2px solid #eee9dc; position: absolute; left: -50px; top: 50%; margin-top: 1px; }
+.entry:first-child:before { width: 10px; height: 50%; top: 50%; margin-top: 2px; border-radius: 10px 0 0 0; }
+.entry:first-child:after { height: 10px; border-radius: 10px 0 0 0; }
+.entry:last-child:before { width: 10px; height: 50%; border-radius: 0 0 0 10px; }
+.entry:last-child:after { height: 10px; border-top: none; border-bottom: 2px solid #eee9dc; border-radius: 0 0 0 10px; margin-top: -9px; }
+.entry.sole:before { display: none; }
+.entry.sole:after { width: 50px; height: 0; margin-top: 1px; border-radius: 0; }
+.label { display: block; min-width: 150px; padding: 5px 10px; line-height: 20px; text-align: center;position: absolute; left: 0; top: 50%; margin-top: -15px; }
+.students-list-box {display: flex;}
+.students-list-box .entry{min-height: 200px;}
+.students-list-box .entry::before,.students-list-box .entry::after,.students-list-box::before{content: none;}
+.students-list-box .entry .label{position: relative;top: 0;}
+.students-list-box .entry .label::after,.label .students-list-box .entry .label::before{content: none;}
+}
+@media (max-width:1440px){
+    h1, .h1 { font-size: 38px; }
+    h2, .h2 { font-size: 30px; }
+    h4, .h4 { font-size: 26px; }
+    h5, .h5 { font-size: 20px; }
+    h6, .h6 { font-size: 15px; }    
+    section { padding: 50px 0; }
+    .btn{padding: 6px 10px;font-size: 15px;}
+    form .form-group{ padding: 5px 10px; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; }
+    .sec-heading h2{margin-bottom: 25px;}
+    header .logo-box img{max-width: 90px;}
+    header .logo-box .sanskardham_logo{max-width: 60px;}
+    header .header-bottom {padding: 6px;}
+    header .header-bottom .header-bottom-area .menu-area .menu > li .sub-menu{top: 25px;}
+    header .headline{padding: 5px 0;}
+    .banner-section .banner-left .banner-title { margin-bottom: 20px; }
+    .banner-section{height: 400px;}
+    
+    .activities-section .activity-list .col-4 { margin-bottom: 10px; }
+    .activities-section .activity-tagline p{font-size:26px; }
+    .activities-section .activity-slider-area{max-width: 1200px;width: 100%;margin: 0 auto;}
+    .activities-section .activity-slider-area .activity-slider .slider-box .slider-image-boxes{height: 380px;}
+    .activities-section .activity-slider-area .activity-slider .slider-box .slider-title{margin-bottom: 30px;}
+    .team-section .team-area{max-width: 900px; padding-top: 10px;}
+    .team-section .team-area .member-box .member-photo{max-width: 100px;height: 100px;margin-right: 15px;}
+    .team-section .team-area .member-box { margin-bottom: 25px; }
+    .faq-section .faq-title .h1{font-size: 40px;}
+    footer .footer-top{max-width: 900px;}
+    footer .footer-tagline p{font-size: 14px;}
+
+    .inner-banner .banner-content h5,.product-list-section .product-list-area h2{margin-bottom: 20px;}
+}
+@media (max-width:1365px){
+    body{font-size: 16px;}
+    .workshop-section .workshop-inner{max-width: 1000px;}
+    .workshop-section .workshop-inner .workshop-slider .work-box h6 { font-size: 18px;}
+    .workshop-section .workshop-inner .workshop-slider .slick-arrow{height: 50px;width: 30px;top: calc(50% - 25px);}
+    .activities-section .activity-slider-area { max-width: 1000px;}
+}
+@media (max-width:1023px){
+    body{font-size: 16px;}
+    .workshop-section .workshop-inner{max-width: 1000px;}
+    .workshop-section .workshop-inner .workshop-slider .work-box h6 { font-size: 18px;}
+    .workshop-section .workshop-inner .workshop-slider .slick-arrow{height: 50px;width: 30px;top: calc(50% - 25px);}
+    .activities-section .activity-slider-area { max-width: 1000px;}
+    .team-section .team-title{text-align: center;}
+    .team-detail-area .teambox{text-align: center;max-width: 300px;}
+    .team-detail-area .mentor-box{margin: 0 auto;}
+    .team-detail-area .branch > .entry{margin: 30px 0 15px;}
+    .team-detail-area .branch > .entry > .label{padding-bottom: 3px;border-bottom: 1px solid #EA6464;}
+    .team-detail-area .branch > .entry .students-list-box{display: flex;flex-wrap: wrap;}
+    .team-detail-area .branch > .entry .students-list-box .entry{max-width: 33.33%;width: 100%; padding: 0 15px;}
+    .team-detail-area .teambox{border-bottom: 0 !important;}
+    .team-detail-area .teambox .designation{padding: 5px 0;}
+    .team-section .team-title{margin-bottom: 25px;}
+}
+@media (max-width:1199px){
+    h5, .h5 { font-size: 15px; }
+    h4, .h4 { font-size: 20px; }
+    header .header-top .col-8 .img img{max-width: 30px;}
+    header .logo-box .sanskardham_logo { max-width: 45px; }
+    header .header-bottom .header-bottom-area .menu-area .menu > li{padding: 0 10px;}
+    header .header-bottom .header-bottom-area .menu-area .menu > li > a{font-size: 12px;}
+    .workshop-section .workshop-inner{max-width: 700px;}
+    .workshop-section .workshop-inner .workshop-slider .work-box h6 { font-size: 12px; }
+    .workshop-section .workshop-inner .workshop-slider .col-6{padding: 0 5px;}
+    .workshop-section .workshop-inner .workshop-slider .work-box .work-img{margin-bottom: 5px;}
+    .workshop-section .workshop-inner .workshop-slider .slick-arrow.slick-next{right: -30px}
+    .workshop-section .workshop-inner .workshop-slider .slick-arrow.slick-prev{left: -30px}
+    .faq-section .faq-title .h1{font-size: 30px;}
+
+    .activities-section .activity-slider-area{max-width: 690px;}
+    .activities-section .activity-slider-area .activity-slider .slider-box .slider-title { margin-bottom: 15px; }
+    .activities-section .activity-slider-area .activity-slider .slider-box .slider-image-boxes{padding: 10px;}
+    .activities-section .activity-slider-area .activity-slider .slider-box .slider-image-boxes { height: 300px; }
+    .activities-section .activity-slider-area .activity-slider .slider-box .slider-image-boxes .half-box{padding: 0 10px;}
+    .activities-section .activity-slider-area .activity-slider .slider-box .slider-image-boxes .half-box .img-box:not(:last-child) { margin-bottom: 10px; height: calc(50% - 10px); }
+    .activities-section .activity-slider-area .activity-slider .slick-arrow{    top: calc(50% - 15px);width: 30px;height: 30px;}
+    .activities-section .activity-slider-area .activity-slider .slick-arrow.slick-prev{left: -35px;}
+    .activities-section .activity-slider-area .activity-slider .slick-arrow.slick-next { right: -35px; }
+}
+
+@media (min-width:768px){
+    .hamburger{display: none;}
+}
+
+@media (max-width:767px){
+    h1, .h1 { font-size: 30px; }
+    h2, .h2 { font-size: 22px; }
+    h3, .h3 { font-size: 20px; }
+    h6, .h6 { font-size: 12px; }
+    section { padding: 30px 0; }
+    p { margin-bottom: 15px; }
+    .col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12{max-width:100%;flex: none;}
+    .d-none{display: block;}
+    .m-none{display: none;}
+    .mobile-header-top .mobile-logo img{max-width: 35px;}
+    #mobile_menu{ position: fixed; top: 0; left: 0; width: 100%; bottom: 0; z-index: 9; overflow-x: hidden; overflow-y: auto; transform: translateX(-100%); transition:all .5s ease ; -webkit-transition:all .5s ease ; -moz-transition:all .5s ease ; -ms-transition:all .5s ease ; -o-transition:all .5s ease ; -webkit-transform: translateX(-100%); -moz-transform: translateX(-100%); -ms-transform: translateX(-100%); -o-transform: translateX(-100%); }
+    #mobile_menu.open{ transform:translateX(0) ; -webkit-transform:translateX(0) ; -moz-transform:translateX(0) ; -ms-transform:translateX(0) ; -o-transform:translateX(0) ; }
+    header .header-bottom .header-bottom-area .menu-area .menu{flex-direction: column;align-items: flex-start;}
+    header .header-bottom .header-bottom-area .search-box{position: relative; opacity: 1;bottom: 0;border: 1px solid var(--white-color);max-width: 100%;margin-bottom: 25px;}
+    header .header-bottom .header-bottom-area .search-box .search-btn{height: 33.19px;}
+    header .header-bottom .header-bottom-area .menu-area .menu > li{border: 0;margin-bottom: 10px;width: 100%;}
+    header .header-bottom .header-bottom-area .menu-area .menu > li > a{font-size: 16px;}
+    header .header-bottom .header-bottom-area .menu-area .menu > li .sub-menu{ position: relative; top: 0; opacity: 1; width: auto; display: none; transition:none ; -webkit-transform:none ; -moz-transform:none ; -ms-transform:none ; -o-transform:none ; -webkit-transition:none ; -moz-transition:none ; -ms-transition:none ; -o-transition:none ; }
+    header .header-bottom .header-bottom-area .menu-area .menu > li .sub-menu li a{font-size: 14px;}
+    header .header-bottom .header-bottom-area .menu-area .menu > li .sub-menu li:not(:last-child) a{border: 0;}
+    header .header-bottom .header-bottom-area .menu-area .menu li.children::after{content: '';position: absolute;right: 0;top: 5px;width: 15px;height: 15px;background-image: url('../images/down-arrow.svg');background-repeat: no-repeat;background-position: center;background-size: contain;}
+    #mobile_menu .close-icon img{max-width: 15px;margin: 5px 0 15px; }
+    header .header-bottom .header-bottom-area .menu-area .menu > li.children::after{content: none;}
+
+    .banner-section .banner-right,.banner-section .banner-left{width: 100%;height: 200px;}
+    .banner-section{height: auto;}
+    .activities-section .activity-list .col-4,.workshop-inner .row > .col-6{max-width: 50%;}
+
+    footer {padding: 10px;}
+    footer .footer-top .contact-box .contact-tagline p {font-size: 12px;}
+    footer .footer-top h3 { margin:15px 0 3px; line-height: 1.7; }
+    footer .contact-form { margin-top: 15px; }
+    footer .footer-bottom{flex-direction: column;}
+    footer .footer-tagline p { font-size: 10px;line-height: 1.5; }
+    footer .footer-tagline p b{ display: block; }
+    footer .footer-bottom ul li a img{max-width: 25px;margin-top: 10px;}
+    
+    .calendar {display: block;}
+    .dialog{height: 100%;}
+
+    .workshop-section .workshop-inner .workshop-slider .slick-arrow.slick-next{right: 0px}
+    .workshop-section .workshop-inner .workshop-slider .slick-arrow.slick-prev{left: 0px}
+    .faq-section .faq-title .h1{font-size: 22px;}
+    .faq-section .boy-img{text-align: center;}
+    .faq-section .faq-box-area { margin-top: 5px; }
+    .faq-section .faq-box-area .btn { padding: 9px 15px;}
+    .faq-section .acc .acc-content { padding: 10px 5px;}
+    .faq-section .acc .acc-head{padding-left: 5px;padding-right: 5px;}
+
+    .activities-section .activity-slider-area {padding-top: 50px;}
+    .activities-section .activity-slider-area .activity-slider .slider-box .slider-image-boxes .img-box{height: auto !important;}
+    .activities-section .activity-slider-area .activity-slider .slider-box .slider-image-boxes .half-box .img-box:not(:last-child) { margin-bottom: 10px; height: auto; }
+    .activities-section .activity-slider-area .activity-slider .slider-box .slider-image-boxes{height: auto;}
+    .activities-section .activity-slider-area .activity-slider .slider-box .slider-image-boxes .full-box .img-box{padding: 10px !important;}
+    .activities-section .activity-slider-area .activity-slider .slick-arrow{top: -40px;}
+    .activities-section .activity-slider-area .activity-slider .slick-arrow.slick-next{right: 43%;}
+    .activities-section .activity-slider-area .activity-slider .slick-arrow.slick-prev{left: 43%;}
+
+    .product-list-section .product-list-area .row > .col-3{max-width: 50%;}
+    .product-list-section .product-list-area .product-box .product-img{height: 45vw;}
+    .product-list-section .product-list-area .product-box .product-price{font-size: 12px;} .product-list-section .product-list-area .view-all-btn { padding: 5px 10px; margin-top: 30px; }
+    .inner-banner .banner-content h1{font-size: 35px;line-height: 0.8;}
+}
+
+@media (max-width:575px){
+    h4, .h4 { font-size: 15px; }
+    body{font-size: 14px;}
+    .activities-section .activity-list .col-4,.workshop-inner .row > .col-6{max-width: 100%;}
+    .activities-section .activity-list .activity-box .activity-img{margin-bottom: 5px;}
+    .team-section .team-area .member-box .member-photo { max-width: 80px; height: 80px; margin-right: 10px; margin-right: 13px; }
+    .month{font-size: 10px;}
+    .day{font-size: 11px;}
+    .workshop-section .workshop-inner .workshop-slider .slick-arrow{height: 40px;width: 20px;top: calc(50% - 20px);}
+    .activities-section .activity-slider-area .activity-slider .slick-arrow.slick-next{right: 36%;}
+    .activities-section .activity-slider-area .activity-slider .slick-arrow.slick-prev{left: 36%;}
+    .team-detail-area .branch > .entry .students-list-box .entry{max-width: 50%;}
+    .team-detail-area .branch > .entry .students-list-box .entry{margin: 10px 0 0  !important;}
+}
